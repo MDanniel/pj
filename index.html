@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>La Lechuza Coramar — Restaurante, Cevicharia &amp; Delivery</title>
+  <meta name="description" content="Alta gastronomia, ceviches artesanais e momentos inesquecíveis no Bairro Taboca.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Componente Modular: Header -->
+  <div id="site-header"></div>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SLIDER 100VH
+         ========================================================================== -->
+    <section class="hero-slider-section" id="hero" aria-label="Apresentação com Carrossel de Pratos">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide-item active" data-index="0">
+          <div class="slide-media slide-bg-1" role="img" aria-label="Ceviche Coramar Artesanal"></div>
+        </div>
+        <div class="slide-item" data-index="1">
+          <div class="slide-media slide-bg-2" role="img" aria-label="Pratos Nobres e Massas Frescas"></div>
+        </div>
+        <div class="slide-item" data-index="2">
+          <div class="slide-media slide-bg-3" role="img" aria-label="Carnes Especiais e Clássicos da Noite"></div>
+        </div>
+      </div>
+      <div class="slider-overlay" aria-hidden="true"></div>
+      <div class="hero-center-content">
+        <h1 class="hero-logo-title">La Lechuza Coramar</h1>
+        <p class="hero-tagline-sub">Restaurante, Cevicharia &amp; Delivery</p>
+      </div>
+      <div class="slider-controls" role="tablist" aria-label="Controles do Slider">
+        <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         OUR MENU
+         ========================================================================== -->
+    <section class="menu-section" id="menu" aria-label="Cardápio">
+      <div class="container">
+        <div class="menu-layout">
+          <div class="menu-content">
+            <div>
+              <h2 class="menu-title">NOSSO CARDÁPIO</h2>
+              <p class="menu-copy">
+                Uma síntese refinada entre a frescura dos pescados, ceviches artesanais e o aconchego dos pratos tradicionais fartos, preparados sob demanda com rigor gastronômico.
+              </p>
+            </div>
+            <div>
+              <a href="#order" class="editorial-link">
+                Explorar Menu &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="menu-gallery">
+            <div class="placeholder-box menu-dish-card" role="img" aria-label="Placeholder 1">
+              <span class="placeholder-label">[ Prato Especial 01 — Vertical ]</span>
+            </div>
+            <div class="placeholder-box menu-dish-card" role="img" aria-label="Placeholder 2">
+              <span class="placeholder-label">[ Prato Especial 02 — Vertical ]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT QUOTE (VERDE OLIVA)
+         ========================================================================== -->
+    <section class="about-quote-section" id="about" aria-label="Filosofia e Sobre Nós">
+      <div class="container">
+        <div class="about-layout">
+          <h2 class="about-quote-title">
+            É SEMPRE MAIS DO QUE BOA COMIDA
+          </h2>
+
+          <div class="about-narrative">
+            <p>
+              Acreditamos que a mesa é um santuário de memórias e conexões. Cada receita carrega respeito pelo tempo, pela qualidade dos ingredientes locais do Bairro Taboca e pela celebração da verdadeira hospitalidade.
+            </p>
+            <a href="#about" class="editorial-link">
+              Sobre Nós &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PUREMENT MOMENTS (GALERIA ASSIMÉTRICA)
+         ========================================================================== -->
+    <section class="gallery-section" aria-label="Galeria de Momentos">
+      <div class="container">
+        <div class="gallery-header">
+          <span class="gallery-subtitle">Atmosfera &amp; Detalhes</span>
+          <h2 class="gallery-title">MOMENTOS ESPECIAIS</h2>
+        </div>
+
+        <div class="asymmetric-grid">
+          <div class="placeholder-box grid-item-1" role="img"><span class="placeholder-label">[ Mural 01 — Destaque Amplo ]</span></div>
+          <div class="placeholder-box grid-item-2" role="img"><span class="placeholder-label">[ Mural 02 — Detalhe ]</span></div>
+          <div class="placeholder-box grid-item-3" role="img"><span class="placeholder-label">[ Mural 03 — Retrato Vertical ]</span></div>
+          <div class="placeholder-box grid-item-4" role="img"><span class="placeholder-label">[ Mural 04 — Ambiente ]</span></div>
+          <div class="placeholder-box grid-item-5" role="img"><span class="placeholder-label">[ Mural 05 — Ponto de Vista ]</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Componente Modular: Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Gerenciador de Componentes -->
+  <script src="components.js"></script>
+
+  <!-- Script específico do Hero Slider -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelectorAll('.slide-item');
+      const dots = document.querySelectorAll('.slider-dot');
+      const track = document.getElementById('sliderTrack');
+      if (!slides.length || !track) return;
+
+      let currentIndex = 0;
+      let autoplayTimer = null;
+      const AUTOPLAY_DELAY = 5000;
+
+      function goToSlide(index) {
+        slides[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+        currentIndex = (index + slides.length) % slides.length;
+        slides[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+      }
+
+      function nextSlide() { goToSlide(currentIndex + 1); }
+      function prevSlide() { goToSlide(currentIndex - 1); }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(nextSlide, AUTOPLAY_DELAY);
+      }
+
+      function stopAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+      }
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          const index = parseInt(dot.getAttribute('data-slide'), 10);
+          goToSlide(index);
+          startAutoplay();
+        });
+      });
+
+      // Touch / Swipe
+      let touchStartX = 0;
+      let touchEndX = 0;
+      const MIN_SWIPE_DISTANCE = 45;
+
+      track.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+      }, { passive: true });
+
+      track.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+      }, { passive: true });
+
+      // Mouse drag
+      let mouseStartX = 0;
+      let isMouseDown = false;
+
+      track.addEventListener('mousedown', (e) => {
+        mouseStartX = e.clientX;
+        isMouseDown = true;
+        stopAutoplay();
+      });
+
+      track.addEventListener('mouseup', (e) => {
+        if (!isMouseDown) return;
+        isMouseDown = false;
+        const diff = e.clientX - mouseStartX;
+        if (Math.abs(diff) > MIN_SWIPE_DISTANCE) {
+          if (diff < 0) nextSlide();
+          else prevSlide();
+        }
+        startAutoplay();
+      });
+
+      // Função de deslize corrigida sem caracteres acidentais
+      function handleSwipe() {
+        const diff = touchEndX - touchStartX;
+        if (Math.abs(diff) > MIN_SWIPE_DISTANCE) {
+          if (diff < 0) {
+            nextSlide(); // Deslizar para esquerda -> Próximo
+          } else {
+            prevSlide(); // Deslizar para direita -> Anterior
+          }
+        }
+      }
+
+      startAutoplay();
+    });
+  </script>
+</body>
+</html>

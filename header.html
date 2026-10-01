@@ -1,0 +1,68 @@
+<!-- ==========================================================================
+     HEADER MODULAR — LA LECHUZA CORAMAR
+     ========================================================================== -->
+<header class="site-header" role="banner">
+  <div class="container header-container">
+    <a href="index.html" class="header-logo" aria-label="La Lechuza Coramar Home">
+      La Lechuza Coramar
+    </a>
+
+    <!-- Links de Navegação Desktop apontando para as páginas separadas -->
+    <nav class="nav-desktop" aria-label="Navegação Principal Desktop">
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order Online</a>
+      <a href="reserve.html">Book a Table</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <!-- Ícone Log In -->
+      <a href="order.html#login" class="header-icon-btn" aria-label="Log In / Conta de Usuário">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </a>
+
+      <!-- Ícone Carrinho -->
+      <a href="order.html#cart" class="header-icon-btn" aria-label="Carrinho de Compras">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="cart-badge">0</span>
+      </a>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu de Navegação">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-label="Menu Mobile" aria-hidden="true">
+  <div class="mobile-drawer-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    <span style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--color-header-text);">La Lechuza</span>
+    <button id="closeDrawerBtn" aria-label="Fechar" style="color: var(--color-header-text); font-size: 1.5rem;">✕</button>
+  </div>
+
+  <!-- Links do Celular apontando para as páginas separadas -->
+  <nav class="mobile-nav-links">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="menu.html" class="mobile-link">Menu</a>
+    <a href="order.html" class="mobile-link">Order Online</a>
+    <a href="reserve.html" class="mobile-link">Book a Table</a>
+    <a href="contact.html" class="mobile-link">Contact</a>
+  </nav>
+
+  <div class="mobile-drawer-footer" style="margin-top: auto; padding-top: 2rem;">
+    <p style="font-family: var(--font-mono); font-size: var(--fs-small); color: var(--color-muted);">Bairro Taboca &bull; Delivery</p>
+  </div>
+</aside>
