@@ -20,62 +20,42 @@ async function loadComponent(elementId, filePath) {
   }
 }
 
-// 2. Inicializador de eventos do Header (Menu Hambúrguer, Botão Fechar e Drawer Mobile)
+// 2. Inicializador de eventos do Header (Com auto-fechamento e rolagem)
 function initializeHeader() {
   const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const closeDrawerBtn = document.getElementById('closeDrawerBtn');
   const mobileDrawer = document.getElementById('mobileDrawer');
   const drawerOverlay = document.getElementById('drawerOverlay');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+  const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+  const mobileLinks = document.querySelectorAll('.mobile-link'); // Captura os links da gaveta
 
-  if (!mobileDrawer) return;
+  if (hamburgerBtn && mobileDrawer) {
+    // Alterna o estado do menu (Abre/Fecha)
+    const toggleMenu = (event) => {
+      if (event) event.stopPropagation(); // Evita conflitos de clique duplo
+      hamburgerBtn.classList.toggle('is-active');
+      mobileDrawer.classList.toggle('is-open');
+      if (drawerOverlay) drawerOverlay.classList.toggle('is-open');
+    };
 
-  function toggleDrawer(open) {
-    const shouldOpen = open !== undefined ? open : !mobileDrawer.classList.contains('is-open');
-    
-    if (hamburgerBtn) {
-      hamburgerBtn.classList.toggle('is-active', shouldOpen);
-      hamburgerBtn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
-    }
-    
-    mobileDrawer.classList.toggle('is-open', shouldOpen);
-    mobileDrawer.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
-    
-    if (drawerOverlay) {
-      drawerOverlay.classList.toggle('is-open', shouldOpen);
-    }
-    
-    document.body.style.overflow = shouldOpen ? 'hidden' : '';
-  }
+    // Força o fechamento do menu
+    const closeMenu = () => {
+      hamburgerBtn.classList.remove('is-active');
+      mobileDrawer.classList.remove('is-open');
+      if (drawerOverlay) drawerOverlay.classList.remove('is-open');
+    };
 
-  if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleDrawer();
+    // Abre o menu ao clicar nas 2 barras
+    hamburgerBtn.addEventListener('click', toggleMenu);
+
+    // Fecha o menu ao clicar no X ou no overlay escuro
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeMenu);
+    if (drawerOverlay) drawerOverlay.addEventListener('click', closeMenu);
+
+    // FECHA O MENU AUTOMATICAMENTE AO CLICAR EM QUALQUER LINK
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
     });
   }
-
-  if (closeDrawerBtn) {
-    closeDrawerBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleDrawer(false);
-    });
-  }
-
-  if (drawerOverlay) {
-    drawerOverlay.addEventListener('click', () => toggleDrawer(false));
-  }
-
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => toggleDrawer(false));
-  });
-
-  // Fechar com tecla ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileDrawer.classList.contains('is-open')) {
-      toggleDrawer(false);
-    }
-  });
 }
 
 // 3. Inicializador de eventos do Footer (Ano dinâmico)
