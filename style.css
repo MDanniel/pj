@@ -13,7 +13,7 @@
   --color-white: #FFFFFF;
   --color-muted: rgba(26, 26, 26, 0.70);
   --color-border: rgba(26, 26, 26, 0.12);
-  --color-placeholder: #EAEAEA; /* Variável ausente corrigida */
+  --color-placeholder: #EAEAEA; 
   
   --color-brand-gold: #D4AF37;
   --color-page-bg: #F9F9F9;       
@@ -28,9 +28,9 @@
   --color-highlight-bg: rgba(212, 175, 55, 0.08);
   --color-highlight-border: rgba(212, 175, 55, 0.25);
 
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Plus Jakarta Sans', sans-serif;
   --font-sans: 'Plus Jakarta Sans', sans-serif;
-  --font-mono: 'Space Mono', monospace;
+  --font-mono: 'Plus Jakarta Sans', sans-serif;
 
   --fs-hero-title: clamp(2.4rem, 1.6rem + 5.5vw, 6.8rem);
   --fs-hero-sub: clamp(1rem, 0.85rem + 1.2vw, 1.85rem);
@@ -49,28 +49,26 @@
   --transition-base: all 0.35s ease;
 }
 
-/* 🌙 MODO ESCURO */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-page-bg: #161616; 
-    --color-card-bg: transparent;       
-    --color-text-main: #FFFFFF;     
-    --color-text-muted: #A0A0A0;    
-    --color-nav-bg: #161616;        
-    --color-nav-text: #FFFFFF;
-    --color-nav-text-muted: #888888;
-    --color-menu-line: rgba(255, 255, 255, 0.08); 
-    --color-highlight-bg: rgba(100, 65, 23, 0.4); 
-    --color-highlight-border: rgba(212, 175, 55, 0.25);
-    --color-placeholder: #2A2A2A; 
-  }
+/* 🌙 MODO ESCURO (Controlado pelo JS via classe .dark-mode) */
+:root.dark-mode {
+  --color-page-bg: #161616; 
+  --color-card-bg: transparent;       
+  --color-text-main: #FFFFFF;     
+  --color-text-muted: #A0A0A0;    
+  --color-nav-bg: #161616;        
+  --color-nav-text: #FFFFFF;
+  --color-nav-text-muted: #888888;
+  --color-menu-line: rgba(255, 255, 255, 0.08); 
+  --color-highlight-bg: rgba(100, 65, 23, 0.4); 
+  --color-highlight-border: rgba(212, 175, 55, 0.25);
+  --color-placeholder: #2A2A2A; 
 }
 
 /* ==========================================================================
    2. RESET GERAL
    ========================================================================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
-html { scroll-behavior: smooth; background-color: var(--color-header-bg); }
+html { scroll-behavior: smooth; background-color: var(--color-page-bg); }
 svg { max-width: 100%; height: auto; }
 
 body {
@@ -78,14 +76,23 @@ body {
   background-color: var(--color-bg); color: var(--color-text);
   font-family: var(--font-sans); font-size: var(--fs-body); line-height: 1.6;
   -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-body.menu-page { background-color: var(--color-page-bg); color: var(--color-text-main); }
+body.menu-page { 
+  background-color: var(--color-page-bg); 
+  color: var(--color-text-main); 
+}
+
+/* Transições suaves para os elementos que mudam de cor no Theme Toggling */
+.menu-main-section, .app-nav-container, .text-tab, .dish-title, .dish-price, .sub-category-title, .menu-subtitle, .buffet-info-box {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
 
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 a { color: inherit; text-decoration: none; transition: var(--transition-base); }
 button { background: none; border: none; color: inherit; font: inherit; cursor: pointer; }
-h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 1.02; }
+h1, h2, h3, h4 { font-family: var(--font-serif); font-weight:500; line-height: 1.01; }
 .container { width: 100%; max-width: var(--container-max); margin-inline: auto; padding-inline: var(--gutter); }
 
 /* ==========================================================================
@@ -111,7 +118,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
 .login-label { display: none; }
 @media (min-width: 1200px) { .login-label { display: inline; } }
 
-.cart-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 4px; background-color: var(--color-olive); color: var(--color-olive-dark); font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; border-radius: 99px; }
+.cart-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; padding: 0 4px; background-color: var(--color-olive); color: var(--color-olive-dark); font-family: var(--font-mono); font-size: 0.65rem; font-weight: 600; border-radius: 99px; }
 
 /* ==========================================================================
    BOTÃO HAMBÚRGUER (3 BARRAS) RESPONSIVO
@@ -202,13 +209,18 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
    5. MENU/CARDÁPIO & BOTÕES WHATSAPP
    ========================================================================== */
 .menu-main-section { padding-top: calc(var(--header-height) + 1.5rem); padding-bottom: 5rem; background-color: var(--color-page-bg); color: var(--color-text-main); min-height: 100vh; }
-.menu-wix-wrapper { background-color: var(--color-card-bg); max-width: 900px; margin: 0 auto; border: none; padding: 2rem 1.2rem; }
+/* Limita a largura do container principal e centraliza */
+.menu-main-section {
+    max-width: 930px; /* Ou o tamanho que preferir, 900px do wix-wrapper pode ser pequeno para telas grandes */
+    margin: 0 auto; /* Centraliza a div na tela */
+    padding-inline: 20px; /* Garante que não encoste nas bordas em telas menores */
+}
 
 .menu-header-text { text-align: center; margin-bottom: 2rem; }
 .menu-main-title { font-family: var(--font-serif); color: var(--color-brand-gold); font-size: clamp(2rem, 1.8rem + 2.5vw, 3.5rem); margin-bottom: 0.5rem; }
 .menu-subtitle { font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; color: var(--color-text-muted); }
 
-.app-nav-container { position: sticky; top: var(--header-height); background-color: var(--color-nav-bg); z-index: 100; padding: 1rem 0 0 0; margin: 0 -1.2rem 2.5rem -1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+.app-nav-{ position: sticky; top: var(--header-height); background-color: transparent; z-index: 100; padding: 1rem 0 0 0; margin: 0 -1.2rem 2.5rem -1.2rem; box-shadow: none }
 .nav-level-1-cards, .nav-level-2-tabs { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 1.2rem; }
 .nav-level-1-cards::-webkit-scrollbar, .nav-level-2-tabs::-webkit-scrollbar { display: none; }
 
@@ -217,20 +229,97 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
 .img-nav-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0.45; }
 .img-nav-card span { position: relative; z-index: 2; color: #FFFFFF; font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; text-shadow: 0 2px 6px rgba(0,0,0,0.9); }
 
-.nav-level-2-tabs { gap: 24px; border-bottom: 1px solid var(--color-menu-line); }
-.text-tab { flex: 0 0 auto; scroll-snap-align: start; color: var(--color-nav-text-muted); font-family: var(--font-sans); font-size: 0.95rem; font-weight: 500; padding: 12px 0 14px 0; position: relative; }
-.text-tab.active { color: var(--color-nav-text); font-weight: 700; }
-.text-tab.active::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 3px; background-color: var(--color-brand-gold); border-radius: 4px 4px 0 0; }
+/* Container das subcategorias */
+.nav-level-2-tabs { 
+  gap: 0; /* Removemos o gap para as caixas ficarem juntas (opcional, mude se quiser espaço) */
+  border-bottom: 1px solid var(--color-menu-line); 
+  display: flex;
+  flex-wrap: nowrap; /* Impede que quebrem linha, permite scroll no celular */
+  margin-bottom: 2rem;
+}
+
+/* Estilo individual de cada caixa de subcategoria */
+.text-tab { 
+  flex: 0 0 auto; 
+  scroll-snap-align: start; 
+  color: var(--color-text-main); 
+  font-family: var(--font-sans); 
+  font-size: 0.95rem; 
+  font-weight: 500; 
+  padding: 12px 24px; /* Adiciona preenchimento para formar a caixa */
+  border: 1px solid var(--color-menu-line); /* Borda ao redor de todas as caixas */
+  border-bottom: none; /* Remove a borda inferior para integrar com a linha principal */
+  border-right: none; /* Remove a borda direita para evitar bordas duplas entre as caixas */
+  background-color: var(--color-white); /* Cor de fundo das caixas (ajuste para dark mode se necessário) */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Garante que a última caixa tenha a borda direita */
+.text-tab:last-child {
+  border-right: 1px solid var(--color-menu-line);
+}
+
+/* Estilo da caixa QUANDO ESTÁ ATIVA (selecionada) */
+.text-tab.active { 
+  font-weight: 400; 
+  color: var(--color-brand-gold); /* Muda a cor do texto para dourado */
+  border-bottom: 3px solid var(--color-brand-gold); /* Adiciona a linha dourada grossa embaixo */
+  margin-bottom: -1px; /* Puxa a caixa um pouco para baixo para sobrepor a linha geral do container */
+}
+
+/* 🌙 Ajustes para o Modo Escuro nas caixas */
+:root.dark-mode .text-tab {
+  background-color: var(--color-nav-bg);
+  border-color: var(--color-menu-line);
+  color: var(--color-text-muted);
+}
+
+:root.dark-mode .text-tab.active {
+  color: var(--color-brand-gold);
+  border-bottom: 3px solid var(--color-brand-gold);
+}
 
 .menu-category-section { margin-bottom: 3.5rem; scroll-margin-top: calc(var(--header-height) + 160px); }
-.sub-category-title { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 1rem; }
+/* Container do título da subcategoria (fundo cinza) */
+/* 1. O novo Banner que vai de ponta a ponta */
+/* Container cinzento de ponta a ponta */
+.category-header-banner {
+  background-color: #F5F5F5 !important;
+  width: 100% !important;
+  padding: 14px 20px !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+  box-sizing: border-box !important;
+  display: block !important;
+}
+
+/* Texto do título dentro do container */
+.category-header-banner .sub-category-title { 
+  font-family: var(--font-sans) !important; 
+  font-size: 1.4rem !important; 
+  font-weight: 600 !important; 
+  color: var(--color-text-main) !important; 
+  margin: 0 !important; 
+  padding: 0 !important;
+  background-color: transparent !important; 
+  border: none !important;
+}
+
+/* 🌙 Ajustes para o Modo Escuro */
+:root.dark-mode .category-header-banner {
+  background-color: #2A2A2A !important;
+}
+:root.dark-mode .category-header-banner .sub-category-title {
+  color: var(--color-white) !important;
+}
 .menu-list-layout { display: flex; flex-direction: column; gap: 0; }
 
 .dish-card-horizontal { display: flex; gap: 16px; justify-content: space-between; align-items: flex-start; padding: 1.2rem 0; border-bottom: 1px solid var(--color-menu-line); background: transparent; cursor: pointer; }
 .dish-info-col { flex: 1; display: flex; flex-direction: column; }
 .dish-title { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600; color: var(--color-text-main); margin-bottom: 4px; line-height: 1.3; }
 .dish-ingredients { font-family: var(--font-sans); font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.45; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.dish-price { font-family: var(--font-sans); font-size: 1rem; font-weight: 700; color: var(--color-text-main); margin-bottom: 4px; }
+.dish-price { font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--color-text-main); margin-bottom: 4px; }
 .saiba-mais-link { font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: var(--color-brand-gold); }
 
 .dish-actions {
@@ -269,7 +358,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
 @media (min-width: 768px) { .footer-grid { grid-template-columns: 1.2fr 1.5fr 1fr; } }
 .footer-brand h3 { font-size: 2rem; margin-bottom: 0.8rem; }
 .footer-brand p { font-size: var(--fs-small); color: var(--color-muted); }
-.footer-contact-title { font-family: var(--font-mono); font-size: var(--fs-small); font-weight: 700; text-transform: uppercase; color: var(--color-text); }
+.footer-contact-title { font-family: var(--font-mono); font-size: var(--fs-small); font-weight: 600; text-transform: uppercase; color: var(--color-text); }
 .footer-contact address { font-style: normal; line-height: 1.6; margin-top: 0.8rem; }
 .footer-nav { display: flex; flex-direction: column; gap: 0.65rem; }
 @media (min-width: 768px) { .footer-nav { align-items: flex-end; text-align: right; } }
@@ -301,7 +390,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   .order-steps-grid { grid-template-columns: repeat(3, 1fr); text-align: left; }
 }
 .order-step-num { font-family: var(--font-serif); font-size: 2.5rem; color: var(--color-brand-gold); display: block; margin-bottom: 0.5rem;}
-.order-step-item h4 { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;}
+.order-step-item h4 { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;}
 
 .reserve-card-container {
   background-color: var(--color-olive);
@@ -341,7 +430,7 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   align-items: center;
 }
 .contact-icon { font-size: 2.5rem; margin-bottom: 1rem;}
-.contact-card h3 { font-family: var(--font-sans); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem;}
+.contact-card h3 { font-family: var(--font-sans); font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;}
 .contact-card p { color: var(--color-text-muted); margin-bottom: 1rem;}
 
 /* ==========================================================================
@@ -411,3 +500,9 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; line-height: 
   .grid-item-5 { grid-column: span 3; grid-row: span 1; }
 }
 @media (max-width: 639px) { .asymmetric-grid .placeholder-box { height: 280px; } }
+
+/* Animação para a renderização condicional dos pratos */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

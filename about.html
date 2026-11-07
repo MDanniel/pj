@@ -2,8 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sobre Nós — La Lechuza Coramar</title>
+  <meta name="description" content="Conheça a história e a proposta gastronômica do La Lechuza Coramar no Bairro Taboca: almoço self-service, jantares artesanais feitos na hora e eventos.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,28 +14,46 @@
 </head>
 <body>
   
-  <!-- O Javascript injeta o cabeçalho -->
+  <!-- O Javascript injeta o cabeçalho modular -->
   <div id="site-header"></div>
 
   <!-- CONTEÚDO EXCLUSIVO DESTA PÁGINA -->
-  <main style="padding-top: var(--header-height); min-height: 80vh;">
+  <main class="page-main-content" style="padding-top: var(--header-height); min-height: 80vh;">
     <section class="about-quote-section" aria-label="Filosofia e Sobre Nós">
       <div class="container">
         <div class="about-layout">
-          <h2 class="about-quote-title">
+          <h1 class="about-quote-title">
             É SEMPRE MAIS DO QUE BOA COMIDA
-          </h2>
+          </h1>
           <div class="about-narrative">
             <p>
-              Acreditamos que a mesa é um santuário de memórias e conexões. Nascido no Bairro Taboca, o La Lechuza Coramar une a tradição gastronômica ao frescor absoluto dos ceviches artesanais e pratos exclusivos. Cada receita carrega respeito pelo tempo e pela celebração da verdadeira hospitalidade.
+              Acreditamos que a mesa é um santuário de memórias e conexões. Nascido no Bairro Taboca, o <strong>La Lechuza Coramar</strong> une a tradição gastronômica ao frescor absoluto dos ceviches artesanais e pratos exclusivos. Cada receita carrega respeito pelo tempo e pela celebração da verdadeira hospitalidade.
             </p>
+            <p style="margin-top: 1.5rem;">
+              Durante o dia, nosso <strong>Almoço Self-Service</strong> oferece opções rotativas e saborosas, sempre preparadas com ingredientes frescos do dia. À noite, a casa se transforma: oferecemos um cardápio especial de <strong>Jantar com pratos preparados na hora</strong>, pescados nobres, ceviches exclusivos e serviço completo de delivery na sua casa.
+            </p>
+            <p style="margin-top: 1.5rem;">
+              Também abrimos as portas para momentos inesquecíveis: realizamos e sediamos <strong>aniversários, confraternizações e eventos especiais</strong> com atendimento personalizado.
+            </p>
+
+            <div style="margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+              <a href="menu.html" class="editorial-link">
+                Conhecer Nosso Cardápio &rarr;
+              </a>
+              <a href="https://wa.me/559798991755073?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20eventos%20e%20reservas." 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="editorial-link">
+                Agendar Evento ou Reserva &rarr;
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- O Javascript injeta o rodapé -->
+  <!-- O Javascript injeta o rodapé modular -->
   <div id="site-footer"></div>
 
   <!-- Carrega as funções interativas -->
