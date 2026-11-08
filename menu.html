@@ -94,6 +94,32 @@
       object-fit: cover;
     }
 
+    /* ESTILOS: STATUS DE DISPONIBILIDADE */
+    .dish-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+    .dish-status.status-verde { color: #25D366; }
+    .dish-status.status-verde .status-dot { background-color: #25D366; }
+    .dish-status.status-vermelho { color: #E74C3C; }
+    .dish-status.status-vermelho .status-dot { background-color: #E74C3C; }
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Ocultar o status na listagem apenas na seção de almoço */
+    #almoco .dish-status {
+      display: none !important;
+    }
+
     /* ESTILOS: MODAL DO PRATO */
     .dish-modal {
       position: fixed;
@@ -146,29 +172,39 @@
     }
     .modal-main-img {
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      max-height: 40vh;
+      object-fit: contain;
+      background-color: #000; 
     }
     .modal-details {
       padding: 1.5rem 1.2rem;
     }
+    
+    #modalStatusContainer {
+      margin-bottom: 0.5rem;
+    }
+    #modalStatusContainer .dish-status {
+      font-size: 0.75rem;
+      margin-top: 0;
+    }
+
     .modal-title {
       font-family: var(--font-sans);
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: var(--color-text-main);
       margin-bottom: 0.5rem;
     }
     .modal-price-container {
       font-family: var(--font-sans);
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--color-text-main);
       margin-bottom: 1.2rem;
     }
     .modal-desc {
       font-family: var(--font-sans);
-      font-size: 1rem;
+      font-size: 0.9rem;
       color: var(--color-text-muted);
       line-height: 1.6;
       margin-bottom: 2rem;
@@ -180,9 +216,9 @@
       background-color: #25D366; 
       color: #FFFFFF !important;
       font-family: var(--font-sans);
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
-      padding: 14px;
+      padding: 10px;
       border-radius: 8px;
       text-decoration: none;
       transition: background-color 0.3s ease;
@@ -191,43 +227,6 @@
       background-color: #1DA851;
     }
 
-    /* ESTILO PARA O AVISO DE URGÊNCIA E PONTO DE STATUS */
-    .urgency-notice {
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--color-brand-gold);
-      background-color: transparent;
-      padding: 0;
-      margin-top: 1rem;
-      border: none; 
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      width: 100%;
-      text-align: left;
-      gap: 16px;
-    }
-    .status-indicator {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
-    .status-verde { color: #25D366; }
-    .status-verde .status-dot { background-color: #25D366; }
-    .status-vermelho { color: #E74C3C; }
-    .status-vermelho .status-dot { background-color: #E74C3C; }
-
-    /* ESTILOS DE ANIMAÇÃO DAS SECÇÕES E FILTROS */
     .menu-category-section { display: none; }
     .sub-category-content { display: block; }
     
@@ -241,14 +240,10 @@
   <div id="site-header"></div>
   <main>
     <div class="menu-main-section" id="menu-content-area">
-      <div class="menu-wix-wrapper">
-        <header class="menu-header-text"></header>
-      </div>
-
-      <!-- NAVEGAÇÃO PRINCIPAL (CARDS VISUAIS) -->
+      <div class="menu-wix-wrapper"><!-- NAVEGAÇÃO PRINCIPAL -->
       <div class="app-nav-container">
         <div class="nav-level-1-cards">
-          <a href="#" class="img-nav-card filter-btn" data-category="almoco">
+          <a href="#" class="img-nav-card filter-btn active" data-category="almoco">
             <div class="img-nav-bg" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=300&q=80');"></div>
             <span>Almoço</span>
           </a>
@@ -262,155 +257,42 @@
           </a>
         </div>
       </div>
+        <header class="menu-header-text"></header>
+      </div>
 
       <!-- ABA 1: ALMOÇO (SELF-SERVICE) -->
-      <section class="menu-category-section scroll-mt" id="almoco">
+      <section class="menu-category-section scroll-mt" id="almoco" style="display: block;">
         <div style="text-align: left; margin: 2rem 0 1.5rem 0; max-width: 800px;">
           <h2 class="sub-category-title" style="font-family: var(--font-sans); font-size: 1.4rem; font-weight: 400; color: var(--color-text-main); margin-bottom: 0.2rem;">Almoço Self-Service</h2>
           <h3 class="sub-category-title" style="font-family: var(--font-sans); font-size: 1.4rem; font-weight: 400; color: var(--color-text-main); margin-bottom: 0.2rem;">Cardápio rotativo</h3>
           <div style="font-family: var(--font-sans); font-size: 1.1rem; color: var(--color-brand-gold); font-weight: 600;">R$ 69,90 <span style="font-size: 0.95rem; font-weight: 500; color: var(--color-text-muted);">/ kg</span></div>
         </div>
-
+        
+        <!-- Novas Abas do Almoço -->
         <div class="nav-level-2-tabs" style="margin-bottom: 1.5rem; justify-content: flex-start; padding: 0;">
           <a href="#" class="text-tab active" data-target="a-todos">Todos</a>
-          <a href="#" class="text-tab" data-target="a-carnes">Carnes & Misturas</a>
+          <a href="#" class="text-tab" data-target="a-carnes">Carnes</a>
+          <a href="#" class="text-tab" data-target="a-aves">Aves</a>
+          <a href="#" class="text-tab" data-target="a-peixes">Peixes</a>
           <a href="#" class="text-tab" data-target="a-guarnicoes">Guarnições</a>
         </div>
-
-        <!-- Carnes & Misturas -->
-        <div id="a-carnes" class="sub-category-content">
-          <div class="category-header-banner">
-            <h2 class="sub-category-title">Carnes & Misturas</h2>
-          </div>
-          <div class="menu-list-layout">
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Bife Acebolado</h4>
-                <p class="dish-ingredients">Clássico bife bovino acebolado preparado na chapa.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=200&q=80" alt="Bife Acebolado" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Isca de Carne</h4>
-                <p class="dish-ingredients">Tirinhas de carne macias e suculentas, salteadas com temperos.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80" alt="Isca de Carne" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Frango Assado / Frito</h4>
-                <p class="dish-ingredients">Pedaços selecionados de frango, com tempero especial da casa.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=200&q=80" alt="Frango Assado" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Pirarucu Frito</h4>
-                <p class="dish-ingredients">Postas frescas e douradas do clássico peixe amazônico.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=200&q=80" alt="Pirarucu Frito" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Lomo Saltado</h4>
-                <p class="dish-ingredients">Prato típico peruano com tiras de carne salteadas com cebola e tomate.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=200&q=80" alt="Lomo Saltado" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Assado de Panela</h4>
-                <p class="dish-ingredients">Carne de panela macia, cozida lentamente com molho encorpado.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8dd?auto=format&fit=crop&w=200&q=80" alt="Assado de Panela" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Tambaqui Frito</h4>
-                <p class="dish-ingredients">Delicioso tambaqui empanado e frito, crocante por fora e suculento por dentro.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?auto=format&fit=crop&w=200&q=80" alt="Tambaqui Frito" class="dish-thumbnail">
-              </div>
-            </article>
-          </div>
+        
+        <!-- Divisões do Almoço -->
+        <div id="a-carnes" class="sub-category-content dynamic-category">
+          <div class="category-header-banner"><h2 class="sub-category-title">Carnes</h2></div>
+          <div class="menu-list-layout items-container"></div>
         </div>
-
-        <!-- Guarnições -->
-        <div id="a-guarnicoes" class="sub-category-content" style="margin-top: 3.5rem;">
-          <div class="category-header-banner">
-            <h2 class="sub-category-title">Guarnições</h2>
-          </div>
-          <div class="menu-list-layout">
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Arroz Branco & Macarrão</h4>
-                <p class="dish-ingredients">Opções frescas de base para o seu prato.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" alt="Arroz e Macarrão" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Feijão Tropeiro & Baião</h4>
-                <p class="dish-ingredients">Acompanhamentos bem temperados, com o gostinho do Brasil.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=200&q=80" alt="Tropeiro e Baião" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Batatonese & Salada Fresca</h4>
-                <p class="dish-ingredients">Opções leves e cremosas para complementar seu almoço.</p>
-                <p class="dish-price" style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;">No Buffet</p>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=200&q=80" alt="Saladas" class="dish-thumbnail">
-              </div>
-            </article>
-          </div>
+        <div id="a-aves" class="sub-category-content dynamic-category" style="margin-top: 3.5rem;">
+          <div class="category-header-banner"><h2 class="sub-category-title">Aves</h2></div>
+          <div class="menu-list-layout items-container"></div>
+        </div>
+        <div id="a-peixes" class="sub-category-content dynamic-category" style="margin-top: 3.5rem;">
+          <div class="category-header-banner"><h2 class="sub-category-title">Peixes</h2></div>
+          <div class="menu-list-layout items-container"></div>
+        </div>
+        <div id="a-guarnicoes" class="sub-category-content dynamic-category" style="margin-top: 3.5rem;">
+          <div class="category-header-banner"><h2 class="sub-category-title">Guarnições</h2></div>
+          <div class="menu-list-layout items-container"></div>
         </div>
       </section>
 
@@ -422,194 +304,45 @@
           <a href="#" class="text-tab" data-target="j-combos">Combos Familiares</a>
         </div>
 
-        <!-- Pratos Principais -->
-        <div id="j-principais" class="sub-category-content">
+        <div id="j-principais" class="sub-category-content dynamic-category">
           <h2 class="sub-category-title">À La Carte & Ceviches</h2>
-          <div class="menu-list-layout">
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Lomo Saltado</h4>
-                <p class="dish-ingredients">Opções de acompanhamento: Batata frita e arroz branco OU Batata frita e arroz chaufa.</p>
-                <p class="dish-price">R$ 35,00</p>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=200&q=80" alt="Lomo Saltado" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Chicharrón de Frango</h4>
-                <p class="dish-ingredients">Opções de acompanhamento: Batata frita e arroz branco OU Batata frita e arroz chaufa.</p>
-                <p class="dish-price">R$ 30,00</p>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=200&q=80" alt="Chicharrón de Frango" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Arroz Chaufa Misto</h4>
-                <p class="dish-ingredients">Generosa porção servida com carnes mistas. Ideal para 2 pessoas.</p>
-                <p class="dish-price">R$ 35,00</p>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=200&q=80" alt="Arroz Chaufa Misto" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Fettuccine ao Molho Alfredo</h4>
-                <p class="dish-ingredients">Massa clássica italiana servida com molho cremoso à base de manteiga e parmesão.</p>
-                <p class="dish-price">R$ 30,00</p>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=200&q=80" alt="Fettuccine ao Molho Alfredo" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Bife à Parmegiana</h4>
-                <p class="dish-ingredients">Bife empanado gratinado com queijo e molho, acompanhado de arroz e batata frita.</p>
-                <p class="dish-price">R$ 35,00</p>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8dd?auto=format&fit=crop&w=200&q=80" alt="Bife à Parmegiana" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Ceviche Lechuza (Clássico)</h4>
-                <p class="dish-ingredients">A receita tradicional da nossa cevicharia. Preparado sem caranguejo.</p>
-                <p class="dish-price">R$ 35,00</p>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?auto=format&fit=crop&w=200&q=80" alt="Ceviche Lechuza" class="dish-thumbnail">
-              </div>
-            </article>
-          </div>
+          <div class="menu-list-layout items-container"></div>
         </div>
-
-        <!-- Combos -->
-        <div id="j-combos" class="sub-category-content" style="margin-top: 3.5rem;">
-          <div class="category-header-banner">
-            <h2 class="sub-category-title">Combos da Casa</h2>
-          </div>
-          <div class="menu-list-layout">
-            <article class="dish-card-horizontal highlight-card">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Combo 1: Frango & Ceviche</h4>
-                <p class="dish-ingredients" style="margin-bottom: 0.2rem;">Acompanha Chicharrón de frango, Arroz chaufa, Patacón e o clássico Ceviche Lechuza.</p>
-                <div class="combo-prices">
-                  <span class="combo-price-tag">2 pessoas: R$ 100</span>
-                  <span class="combo-price-tag">3 pessoas: R$ 130</span>
-                  <span class="combo-price-tag">5 pessoas: R$ 180</span>
-                </div>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=200&q=80" alt="Combo Frango e Ceviche" class="dish-thumbnail">
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal highlight-card">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Combo 2: Peixe & Ceviche</h4>
-                <p class="dish-ingredients" style="margin-bottom: 0.2rem;">Acompanha Chicharrón de peixe, Arroz chaufa, Patacón e o clássico Ceviche Lechuza.</p>
-                <div class="combo-prices">
-                  <span class="combo-price-tag">2 pessoas: R$ 100</span>
-                  <span class="combo-price-tag">3 pessoas: R$ 130</span>
-                  <span class="combo-price-tag">5 pessoas: R$ 180</span>
-                </div>
-                <span class="saiba-mais-link">Saiba mais</span>
-              </div>
-              <div class="dish-thumbnail-col">
-                <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=200&q=80" alt="Combo Peixe e Ceviche" class="dish-thumbnail">
-              </div>
-            </article>
-          </div>
+        <div id="j-combos" class="sub-category-content dynamic-category" style="margin-top: 3.5rem;">
+          <div class="category-header-banner"><h2 class="sub-category-title">Combos da Casa</h2></div>
+          <div class="menu-list-layout items-container"></div>
         </div>
       </section>
 
       <!-- ABA 3: BEBIDAS -->
       <section class="menu-category-section scroll-mt" id="bebidas">
+        <!-- Novas Abas de Bebidas -->
         <div class="nav-level-2-tabs" style="margin-bottom: 2.5rem; justify-content: flex-start; padding: 0;">
           <a href="#" class="text-tab active" data-target="b-todos">Todos</a>
-          <a href="#" class="text-tab" data-target="b-cervejas">Cervejas & Baldes</a>
+          <a href="#" class="text-tab" data-target="b-cervejas">Cervejas</a>
+          <a href="#" class="text-tab" data-target="b-torres">Torres</a>
           <a href="#" class="text-tab" data-target="b-semalcool">Sem Álcool</a>
         </div>
 
-        <!-- Cervejas e Baldes -->
-        <div id="b-cervejas" class="sub-category-content">
-          <div class="category-header-banner">
-            <h2 class="sub-category-title">Cervejas & Baldes</h2>
-          </div>
-          <p class="menu-copy" style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">
-            Deseja balde? Os baldes são calculados por unidade. Exemplo: Um balde com 10 unidades de Sub-Zero sai por R$ 60,00.
-          </p>
-          <div class="menu-list-layout">
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Heineken</h4>
-                <p class="dish-price">R$ 15,00 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-text-muted);">/unidade</span></p>
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Corona</h4>
-                <p class="dish-price">R$ 13,00 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-text-muted);">/unidade</span></p>
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Coronita</h4>
-                <p class="dish-price">R$ 10,00 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-text-muted);">/unidade</span></p>
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Sub-Zero</h4>
-                <p class="dish-price">R$ 6,00 <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-text-muted);">/unidade</span></p>
-              </div>
-            </article>
-          </div>
+        <!-- Divisões de Bebidas -->
+        <div id="b-cervejas" class="sub-category-content dynamic-category">
+          <div class="category-header-banner"><h2 class="sub-category-title">Cervejas</h2></div>
+          <div class="menu-list-layout items-container"></div>
         </div>
-
-        <!-- Não Alcoólicas -->
-        <div id="b-semalcool" class="sub-category-content" style="margin-top: 3.5rem;">
-          <div class="category-header-banner">
-            <h2 class="sub-category-title">Sem Álcool</h2>
-          </div>
-          <div class="menu-list-layout">
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Refrigerantes</h4>
-                <p class="dish-ingredients">Opções: Coca-Cola, Fanta Laranja ou Fanta Uva.</p>
-                <p class="dish-price">R$ 7,00</p>
-              </div>
-            </article>
-
-            <article class="dish-card-horizontal">
-              <div class="dish-info-col">
-                <h4 class="dish-title">Sucos Naturais</h4>
-                <p class="dish-ingredients">Opções feitas da fruta: Maracujá, Acerola ou Cupuaçu.</p>
-                <p class="dish-price">R$ 7,00</p>
-              </div>
-            </article>
-          </div>
+        <div id="b-torres" class="sub-category-content dynamic-category" style="margin-top: 3.5rem;">
+          <div class="category-header-banner"><h2 class="sub-category-title">Torres</h2></div>
+          <div class="menu-list-layout items-container"></div>
+        </div>
+        <div id="b-semalcool" class="sub-category-content dynamic-category" style="margin-top: 3.5rem;">
+          <div class="category-header-banner"><h2 class="sub-category-title">Sem Álcool</h2></div>
+          <div class="menu-list-layout items-container"></div>
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- MODAL DE DETALHES DO PRATO -->
+  <!-- MODAL -->
   <div id="dishModal" class="dish-modal">
     <div class="modal-content">
       <div class="modal-header">
@@ -618,10 +351,10 @@
       <div class="modal-body">
         <img src="" id="modalImg" class="modal-main-img" alt="Imagem do Prato">
         <div class="modal-details">
-          <h2 id="modalTitle" class="modal-title">Nome do Prato</h2>
-          <div id="modalPriceContainer" class="modal-price-container">Preço</div>
-          <p id="modalDesc" class="modal-desc">Descrição do prato...</p>
-          
+          <div id="modalStatusContainer"></div>
+          <h2 id="modalTitle" class="modal-title"></h2>
+          <div id="modalPriceContainer" class="modal-price-container"></div>
+          <p id="modalDesc" class="modal-desc"></p>
           <a href="#" id="modalWhatsappBtn" target="_blank" rel="noopener" class="modal-action-btn">
             Fazer Pedido no WhatsApp
           </a>
@@ -635,7 +368,66 @@
   
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. LÓGICA DE NAVEGAÇÃO DAS ABAS PRINCIPAIS
+      // 1. CARREGAR E RENDERIZAR ITENS DO JSON
+      fetch('menu_data.json')
+        .then(response => response.json())
+        .then(data => {
+            renderMenu(data);
+            setupTabs();
+            setupModal();
+        })
+        .catch(error => console.error('Erro ao carregar cardápio:', error));
+
+      function renderMenu(items) {
+          items.forEach(item => {
+              const container = document.querySelector(`#${item.subcategory} .items-container`);
+              if (!container) return;
+
+              const isAvailable = item.available;
+              const statusClass = isAvailable ? 'status-verde' : 'status-vermelho';
+              const statusText = isAvailable ? 'Disponível' : 'Indisponível';
+              
+              let priceHtml = '';
+              if (item.comboPrices) {
+                  priceHtml = `<div class="combo-prices">` + 
+                    item.comboPrices.map(cp => `<span class="combo-price-tag">${cp.label}: ${cp.price}</span>`).join('') + 
+                    `</div>`;
+              } else if (item.unit) {
+                  priceHtml = `<p class="dish-price">${item.price} <span style="font-size: 0.8rem; font-weight: 400; color: var(--color-text-muted);">${item.unit}</span></p>`;
+              } else {
+                  let priceStyle = item.price === "No Buffet" ? `style="color: var(--color-brand-gold); font-size: 0.85rem; font-weight: 600;"` : "";
+                  priceHtml = `<p class="dish-price" ${priceStyle}>${item.price}</p>`;
+              }
+
+              const hasImage = item.image ? true : false;
+              const imageColHtml = hasImage ? `
+                <div class="dish-thumbnail-col">
+                  <img src="${item.image}" alt="${item.title}" class="dish-thumbnail">
+                </div>
+              ` : '';
+              
+              const isCombo = item.subcategory === 'j-combos' ? 'highlight-card' : '';
+              const saibaMais = hasImage ? `<span class="saiba-mais-link">Saiba mais</span>` : '';
+
+              const articleHtml = `
+  <article class="dish-card-horizontal ${isCombo}" data-title="${item.title}" data-img="${item.image || ''}" data-delivery-price="${item.deliveryPrice || ''}">
+                  <div class="dish-info-col">
+                    <h4 class="dish-title">${item.title}</h4>
+                    ${item.description ? `<p class="dish-ingredients">${item.description}</p>` : ''}
+                    ${priceHtml}
+                    <div class="dish-status ${statusClass}">${statusText}<span class="status-dot"></span></div>
+                    ${saibaMais}
+                  </div>
+                  ${imageColHtml}
+                </article>
+              `;
+              
+              container.insertAdjacentHTML('beforeend', articleHtml);
+          });
+          setupModal(); // Re-bind after DOM injection
+      }
+
+      // 2. LÓGICA DE NAVEGAÇÃO DAS ABAS PRINCIPAIS
       const navCards = document.querySelectorAll('.nav-level-1-cards .img-nav-card');
       const mainSections = [
         document.getElementById('almoco'),
@@ -666,122 +458,128 @@
           }
         });
 
-        if (categoryId === 'cardapio') {
-          mainSections.forEach(section => {
-            if (section) {
-              section.style.display = 'block';
-              section.style.animation = 'fadeIn 0.4s ease forwards';
-              resetSubCategories(section);
-            }
-          });
-        } else {
-          mainSections.forEach(section => {
-            if (section && section.id === categoryId) {
-              section.style.display = 'block';
-              section.style.animation = 'fadeIn 0.4s ease forwards';
-              resetSubCategories(section);
-            } else if (section) {
-              section.style.display = 'none';
-            }
-          });
-        }
+        mainSections.forEach(section => {
+          if (section && section.id === categoryId) {
+            section.style.display = 'block';
+            section.style.animation = 'fadeIn 0.4s ease forwards';
+            resetSubCategories(section);
+          } else if (section) {
+            section.style.display = 'none';
+          }
+        });
       };
 
-      if (navCards.length > 0 && mainSections.length > 0) {
-        showMainCategory('almoco');
+      navCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
+          const category = card.getAttribute('data-category');
+          showMainCategory(category);
+        });
+      });
 
-        navCards.forEach(card => {
-          card.addEventListener('click', (e) => {
+      // 3. LÓGICA DE FILTRAGEM DAS SUB-ABAS
+      function setupTabs() {
+        document.querySelectorAll('.nav-level-2-tabs .text-tab').forEach(tab => {
+          tab.addEventListener('click', (e) => {
             e.preventDefault();
-            const category = card.getAttribute('data-category');
-            showMainCategory(category);
+            const targetId = tab.getAttribute('data-target');
+            const parentSection = tab.closest('.menu-category-section');
+            
+            parentSection.querySelectorAll('.text-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            const contentDivs = parentSection.querySelectorAll('.sub-category-content');
+            
+            if (targetId.endsWith('-todos')) {
+              contentDivs.forEach(div => {
+                div.style.display = 'block';
+                div.style.animation = 'fadeIn 0.4s ease forwards';
+              });
+            } else {
+              contentDivs.forEach(div => {
+                if (div.id === targetId) {
+                  div.style.display = 'block';
+                  div.style.animation = 'fadeIn 0.4s ease forwards';
+                } else {
+                  div.style.display = 'none';
+                }
+              });
+            }
           });
         });
       }
 
-      // 2. LÓGICA DE FILTRAGEM DAS SUB-ABAS
-      document.querySelectorAll('.nav-level-2-tabs .text-tab').forEach(tab => {
-        tab.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = tab.getAttribute('data-target');
-          const parentSection = tab.closest('.menu-category-section');
-          
-          parentSection.querySelectorAll('.text-tab').forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
+      // 4. LÓGICA DO MODAL (DETALHES DO PRATO)
+      function setupModal() {
+        const modal = document.getElementById('dishModal');
+        const btnClose = document.getElementById('closeModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPriceContainer = document.getElementById('modalPriceContainer');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
+        const modalStatusContainer = document.getElementById('modalStatusContainer');
 
-          const contentDivs = parentSection.querySelectorAll('.sub-category-content');
-          
-          if (targetId.endsWith('-todos')) {
-            contentDivs.forEach(div => {
-              div.style.display = 'block';
-              div.style.animation = 'fadeIn 0.4s ease forwards';
+        // Remove old listeners to avoid duplicates
+        const cards = document.querySelectorAll('.dish-card-horizontal');
+        cards.forEach(card => {
+            // Clone node to clear listeners
+            const newCard = card.cloneNode(true);
+            card.parentNode.replaceChild(newCard, card);
+            
+            newCard.addEventListener('click', () => {
+                const title = newCard.getAttribute('data-title');
+                const imgSrc = newCard.getAttribute('data-img');
+                
+                const descElement = newCard.querySelector('.dish-ingredients');
+                const desc = descElement ? descElement.innerText : '';
+                
+                const priceElement = newCard.querySelector('.dish-price');
+                const combosElement = newCard.querySelector('.combo-prices');
+                
+                const statusElement = newCard.querySelector('.dish-status');
+                if (statusElement) {
+                    modalStatusContainer.innerHTML = statusElement.outerHTML;
+                } else {
+                    modalStatusContainer.innerHTML = '';
+                }
+                
+                const deliveryPrice = newCard.getAttribute('data-delivery-price');
+
+if (deliveryPrice) {
+    modalPriceContainer.innerHTML = deliveryPrice;
+} else if (priceElement) {
+    modalPriceContainer.innerHTML = priceElement.innerHTML;
+} else if (combosElement) {
+    modalPriceContainer.innerHTML = combosElement.innerHTML;
+} else {
+    modalPriceContainer.innerHTML = '';
+}
+
+                modalTitle.innerText = title;
+                modalDesc.innerText = desc;
+                
+                if(imgSrc && imgSrc !== 'undefined') {
+                    modalImg.src = imgSrc.replace('w=200', 'w=800');
+                    modalImg.style.display = 'block';
+                } else {
+                    modalImg.style.display = 'none';
+                }
+
+                const msg = encodeURIComponent(`Olá, gostaria de pedir o ${title}!`);
+                modalWhatsappBtn.href = `https://wa.me/559798991755073?text=${msg}`;
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
             });
-          } else {
-            contentDivs.forEach(div => {
-              if (div.id === targetId) {
-                div.style.display = 'block';
-                div.style.animation = 'fadeIn 0.4s ease forwards';
-              } else {
-                div.style.display = 'none';
-              }
-            });
-          }
         });
-      });
 
-      // 3. LÓGICA DO MODAL (DETALHES DO PRATO)
-      const modal = document.getElementById('dishModal');
-      const btnClose = document.getElementById('closeModal');
-      const modalImg = document.getElementById('modalImg');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalPriceContainer = document.getElementById('modalPriceContainer');
-      const modalDesc = document.getElementById('modalDesc');
-      const modalWhatsappBtn = document.getElementById('modalWhatsappBtn');
-
-      document.querySelectorAll('.dish-card-horizontal').forEach(card => {
-        card.addEventListener('click', () => {
-          const titleElement = card.querySelector('.dish-title');
-          const title = titleElement ? titleElement.innerText : '';
-          
-          const descElement = card.querySelector('.dish-ingredients');
-          const desc = descElement ? descElement.innerText : '';
-          
-          const imgElement = card.querySelector('.dish-thumbnail');
-          const imgSrc = imgElement ? imgElement.src : '';
-
-          const priceElement = card.querySelector('.dish-price');
-          const combosElement = card.querySelector('.combo-prices');
-          
-          if (priceElement) {
-            modalPriceContainer.innerHTML = priceElement.innerHTML;
-          } else if (combosElement) {
-            modalPriceContainer.innerHTML = combosElement.innerHTML;
-          } else {
-            modalPriceContainer.innerHTML = '';
-          }
-
-          modalTitle.innerText = title;
-          modalDesc.innerText = desc;
-          
-          if(imgSrc) {
-            modalImg.src = imgSrc.replace('w=200', 'w=800');
-            modalImg.style.display = 'block';
-          } else {
-            modalImg.style.display = 'none';
-          }
-
-          const msg = encodeURIComponent(`Olá, gostaria de pedir o ${title}!`);
-          modalWhatsappBtn.href = `https://wa.me/559798991755073?text=${msg}`;
-
-          modal.classList.add('active');
-          document.body.style.overflow = 'hidden'; 
+        btnClose.replaceWith(btnClose.cloneNode(true));
+        document.getElementById('closeModal').addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; 
         });
-      });
-
-      btnClose.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = ''; 
-      });
+      }
     });
   </script>
 </body>

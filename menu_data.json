@@ -1,0 +1,400 @@
+[
+  {
+    "id": "almoco-bife-acebolado",
+    "category": "almoco",
+    "subcategory": "a-carnes",
+    "title": "Bife Acebolado",
+    "description": "Clássico bife bovino acebolado preparado na chapa.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 35,00",
+    "image": "images/bife-acebolado.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-assado",
+    "category": "almoco",
+    "subcategory": "a-carnes",
+    "title": "Assado de Panela",
+    "description": "Carne de panela macia, cozida lentamente com molho encorpado.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 35,00",
+    "image": "images/assado-panela.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-isca-de-carne",
+    "category": "almoco",
+    "subcategory": "a-carnes",
+    "title": "Isca de Carne",
+    "description": "Tirinhas de carne macias e suculentas, salteadas com temperos.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 35,00",
+    "image": "images/isca-carne.jpg",
+    "available": false
+  },
+  {
+    "id": "almoco-escondidinho-de-carne",
+    "category": "almoco",
+    "subcategory": "a-carnes",
+    "title": "Escondidinho de Carne",
+    "description": "Tirinhas de carne macias e suculentas, salteadas com temperos.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 35,00",
+    "image": "images/escondidinho-carne.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-lomo",
+    "category": "almoco",
+    "subcategory": "a-carnes",
+    "title": "Lomo Saltado",
+    "description": "Prato típico peruano com tiras de carne salteadas com cebola e tomate.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 30,00",
+    "image": "images/lomo-saltado-almoco.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-frango-assado",
+    "category": "almoco",
+    "subcategory": "a-aves",
+    "title": "Frango Assado",
+    "description": "Pedaços selecionados de frango, com tempero especial da casa.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 30,00",
+    "image": "images/frango-assado.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-frango-frito",
+    "category": "almoco",
+    "subcategory": "a-aves",
+    "title": "Frango Frito",
+    "description": "Pedaços selecionados de frango, com tempero especial da casa.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 30,00",
+    "image": "images/frango-frito.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-caldo-de-galinha-Caipira",
+    "category": "almoco",
+    "subcategory": "a-aves",
+    "title": "Caldo de Galinha Caipira",
+    "description": "Caldo cremoso e saboroso preparado com galinha inteira.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 25,00",
+    "image": "images/caldo-galinha.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-Guisado-de-pato",
+    "category": "almoco",
+    "subcategory": "a-aves",
+    "title": "Guisado de pato",
+    "description": "Caldo cremoso e saboroso preparado com ato inteiro.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 30,00",
+    "image": "images/guisado-pato.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-pirarucu",
+    "category": "almoco",
+    "subcategory": "a-peixes",
+    "title": "Pirarucu Frito",
+    "description": "Postas frescas e douradas do clássico peixe amazônico.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 30,00",
+    "image": "images/pirarucu-frito.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-tambaqui",
+    "category": "almoco",
+    "subcategory": "a-peixes",
+    "title": "Tambaqui Frito",
+    "description": "Delicioso tambaqui empanado e frito, crocante por fora e suculento por dentro.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 30,00",
+    "image": "images/tambaqui-frito.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-Pacu",
+    "category": "almoco",
+    "subcategory": "a-peixes",
+    "title": "Pacu Frito",
+    "description": "Delicioso tambaqui empanado e frito, crocante por fora e suculento por dentro.",
+    "price": "No Buffet",
+    "deliveryPrice": "R$ 30,00",
+    "image": "images/pacu-frito.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-Feijao-tropeiro",
+    "category": "almoco",
+    "subcategory": "a-guarnicoes",
+    "title": "Feijão Tropeiro",
+    "description": "Delicioso feijão tropeiro.",
+    "price": "No Buffet",
+    "image": "images/feijao-tropeiro.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-Vatapa",
+    "category": "almoco",
+    "subcategory": "a-guarnicoes",
+    "title": "Vatapá",
+    "description": "Delicioso vatapá.",
+    "price": "No Buffet",
+    "image": "images/vatapa.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-arroz-macarrao",
+    "category": "almoco",
+    "subcategory": "a-guarnicoes",
+    "title": "Arroz Branco & Macarrão",
+    "description": "Opções frescas de base para o seu prato.",
+    "price": "No Buffet",
+    "image": "images/arroz-macarrao.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-feijao-baiao",
+    "category": "almoco",
+    "subcategory": "a-guarnicoes",
+    "title": "Feijão Tropeiro & Baião",
+    "description": "Acompanhamentos bem temperados, com o gostinho do Brasil.",
+    "price": "No Buffet",
+    "image": "images/feijao-baiao.jpg",
+    "available": true
+  },
+  {
+    "id": "almoco-saladas",
+    "category": "almoco",
+    "subcategory": "a-guarnicoes",
+    "title": "Batatonese & Salada Fresca",
+    "description": "Opções leves e cremosas para complementar seu almoço.",
+    "price": "No Buffet",
+    "image": "images/saladas.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-lomo",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Lomo Saltado",
+    "description": "Opções de acompanhamento: Batata frita e arroz branco OU Batata frita e arroz chaufa.",
+    "price": "R$ 35,00",
+    "image": "images/lomo-jantar.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-chicharron-frango",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Chicharrón de Frango",
+    "description": "Opções de acompanhamento: Batata frita e arroz branco OU Batata frita e arroz chaufa.",
+    "price": "R$ 30,00",
+    "image": "images/chicharron-frango.jpg",
+    "available": false
+  },
+  {
+    "id": "jantar-arroz-chaufa",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Arroz Chaufa Misto",
+    "description": "Generosa porção servida com carnes mistas. Ideal para 2 pessoas.",
+    "price": "R$ 35,00",
+    "image": "images/arroz-chaufa.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-fettuccine",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Fettuccine ao Molho Alfredo",
+    "description": "Massa clássica italiana servida com molho cremoso à base de manteiga e parmesão.",
+    "price": "R$ 30,00",
+    "image": "images/fettuccine.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-parmegiana",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Bife à Parmegiana",
+    "description": "Bife empanado gratinado com queijo e molho, acompanhado de arroz e batata frita.",
+    "price": "R$ 35,00",
+    "image": "images/parmegiana.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-parmegiana2",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Frango à Parmegiana",
+    "description": "Frango empanado gratinado com queijo e molho, acompanhado de arroz e batata frita.",
+    "price": "R$ 35,00",
+    "image": "images/parmegiana-frango.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-ceviche-Coramar",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Ceviche Coramar (Especial da Casa)",
+    "description": "A receita tradicional da nossa cevicharia. Preparado com caranguejo.",
+    "price": "R$ 120,00",
+    "image": "images/ceviche-coramar.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-ceviche-lechuza",
+    "category": "jantar",
+    "subcategory": "j-principais",
+    "title": "Ceviche Lechuza (Clássico)",
+    "description": "A receita tradicional da nossa cevicharia. Preparado sem caranguejo.",
+    "price": "R$ 40,00",
+    "image": "images/ceviche-lechuza.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-combo-1",
+    "category": "jantar",
+    "subcategory": "j-combos",
+    "title": "Combo 1: Frango & Ceviche",
+    "description": "Acompanha Chicharrón de frango, Arroz chaufa, Patacón e o clássico Ceviche Lechuza.",
+    "comboPrices": [
+      { "label": "2 pessoas", "price": "R$ 100" },
+      { "label": "3 pessoas", "price": "R$ 130" },
+      { "label": "5 pessoas", "price": "R$ 180" }
+    ],
+    "image": "images/combo-frango.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-combo-2",
+    "category": "jantar",
+    "subcategory": "j-combos",
+    "title": "Combo 2: Peixe & Ceviche",
+    "description": "Acompanha Chicharrón de peixe, Arroz chaufa, Patacón e o clássico Ceviche Lechuza.",
+    "comboPrices": [
+      { "label": "2 pessoas", "price": "R$ 100" },
+      { "label": "3 pessoas", "price": "R$ 130" },
+      { "label": "5 pessoas", "price": "R$ 180" }
+    ],
+    "image": "images/combo-peixe.jpg",
+    "available": true
+  },
+  {
+    "id": "bebida-heineken",
+    "category": "bebidas",
+    "subcategory": "b-cervejas",
+    "title": "Heineken",
+    "description": "",
+    "price": "R$ 15,00",
+    "image": "images/heineken.jpg",
+    "unit": "/unidade",
+    "available": false
+  },
+  {
+    "id": "bebida-corona",
+    "category": "bebidas",
+    "subcategory": "b-cervejas",
+    "title": "Corona",
+    "description": "",
+    "price": "R$ 13,00",
+    "image": "images/corona.jpg",
+    "unit": "/unidade",
+    "available": true
+  },
+  {
+    "id": "bebida-coronita",
+    "category": "bebidas",
+    "subcategory": "b-cervejas",
+    "title": "Coronita",
+    "description": "",
+    "price": "R$ 10,00",
+    "image": "images/coronita.jpg",
+    "unit": "/unidade",
+    "available": true
+  },
+  {
+    "id": "bebida-subzero",
+    "category": "bebidas",
+    "subcategory": "b-cervejas",
+    "title": "Sub-Zero",
+    "description": "",
+    "price": "R$ 6,00",
+    "image": "images/subzero.jpg",
+    "unit": "/unidade",
+    "available": true
+  },
+  {
+    "id": "torre-heineken",
+    "category": "bebidas",
+    "subcategory": "b-torres",
+    "title": "Torre de Heineken",
+    "description": "2 Litros",
+    "price": "R$ 80,00",
+    "image": "images/torre-heineken.jpg",
+    "unit": "/torre",
+    "available": true
+  },
+  {
+    "id": "torre-corona",
+    "category": "bebidas",
+    "subcategory": "b-torres",
+    "title": "Torre de Corona",
+    "description": "2 Litros",
+    "price": "R$ 75,00",
+    "image": "images/torre-corona.jpg",
+    "unit": "/torre",
+    "available": true
+  },
+  {
+    "id": "torre-coronita",
+    "category": "bebidas",
+    "subcategory": "b-torres",
+    "title": "Torre de Coronita",
+    "description": "2 Litros",
+    "price": "R$ 70,00",
+    "image": "images/torre-coronita.jpg",
+    "unit": "/torre",
+    "available": false
+  },
+  {
+    "id": "torre-subzero",
+    "category": "bebidas",
+    "subcategory": "b-torres",
+    "title": "Torre de Sub-Zero",
+    "description": "2 Litros",
+    "price": "R$ 50,00",
+    "image": "images/torre-subzero.jpg",
+    "unit": "/torre",
+    "available": true
+  },
+  {
+    "id": "bebida-refrigerantes",
+    "category": "bebidas",
+    "subcategory": "b-semalcool",
+    "title": "Refrigerantes",
+    "description": "Opções: Coca-Cola, Fanta Laranja ou Fanta Uva.",
+    "price": "R$ 7,00",
+    "image": "images/refrigerante.jpg",
+    "available": true
+  },
+  {
+    "id": "bebida-sucos",
+    "category": "bebidas",
+    "subcategory": "b-semalcool",
+    "title": "Sucos Naturais",
+    "description": "Opções feitas da fruta: Maracujá, Acerola ou Cupuaçu.",
+    "price": "R$ 7,00",
+    "image": "images/suco.jpg",
+    "available": true
+  }
+]
