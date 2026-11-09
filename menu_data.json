@@ -29,7 +29,7 @@
     "description": "Tirinhas de carne macias e suculentas, salteadas com temperos.",
     "price": "No Buffet",
     "deliveryPrice": "R$ 35,00",
-    "image": "images/isca-carne.jpg",
+    "image": "images/isca-de-carne.jpg",
     "available": false
   },
   {
@@ -40,7 +40,7 @@
     "description": "Tirinhas de carne macias e suculentas, salteadas com temperos.",
     "price": "No Buffet",
     "deliveryPrice": "R$ 35,00",
-    "image": "images/escondidinho-carne.jpg",
+    "image": "images/escondidinho-de-carne.jpg",
     "available": true
   },
   {
@@ -51,7 +51,7 @@
     "description": "Prato típico peruano com tiras de carne salteadas com cebola e tomate.",
     "price": "No Buffet",
     "deliveryPrice": "R$ 30,00",
-    "image": "images/lomo-saltado-almoco.jpg",
+    "image": "images/lomo-saltado.jpg",
     "available": true
   },
   {
@@ -84,7 +84,7 @@
     "description": "Caldo cremoso e saboroso preparado com galinha inteira.",
     "price": "No Buffet",
     "deliveryPrice": "R$ 25,00",
-    "image": "images/caldo-galinha.jpg",
+    "image": "images/caldo-de-galinha-caipira.jpg",
     "available": true
   },
   {
@@ -95,7 +95,7 @@
     "description": "Caldo cremoso e saboroso preparado com ato inteiro.",
     "price": "No Buffet",
     "deliveryPrice": "R$ 30,00",
-    "image": "images/guisado-pato.jpg",
+    "image": "images/guisado-de-pato.jpg",
     "available": true
   },
   {
@@ -162,53 +162,63 @@
     "available": true
   },
   {
-    "id": "almoco-feijao-baiao",
+    "id": "almoco-baiao",
     "category": "almoco",
     "subcategory": "a-guarnicoes",
-    "title": "Feijão Tropeiro & Baião",
+    "title": " Baião",
     "description": "Acompanhamentos bem temperados, com o gostinho do Brasil.",
     "price": "No Buffet",
-    "image": "images/feijao-baiao.jpg",
+    "image": "images/baiao.jpg",
     "available": true
   },
   {
-    "id": "almoco-saladas",
+    "id": "almoco-salada",
     "category": "almoco",
     "subcategory": "a-guarnicoes",
-    "title": "Batatonese & Salada Fresca",
+    "title": "Salada",
     "description": "Opções leves e cremosas para complementar seu almoço.",
     "price": "No Buffet",
-    "image": "images/saladas.jpg",
+    "image": "images/salada.jpg",
     "available": true
   },
   {
-    "id": "jantar-lomo",
+    "id": "almoco-batatonese",
+    "category": "almoco",
+    "subcategory": "a-guarnicoes",
+    "title": "Batatonese",
+    "description": "Opções leves e cremosas para complementar seu almoço.",
+    "price": "No Buffet",
+    "image": "images/Batatonese.jpg",
+    "available": true
+  },
+  {
+    "id": "jantar-lomo-saltado-branco",
     "category": "jantar",
     "subcategory": "j-principais",
     "title": "Lomo Saltado",
     "description": "Opções de acompanhamento: Batata frita e arroz branco OU Batata frita e arroz chaufa.",
     "price": "R$ 35,00",
-    "image": "images/lomo-jantar.jpg",
+    "image": "images/lomo-saltado-branco.jpg",
     "available": true
   },
   {
-    "id": "jantar-chicharron-frango",
+    "id": "jantar-chicharron-de-frango",
     "category": "jantar",
     "subcategory": "j-principais",
     "title": "Chicharrón de Frango",
     "description": "Opções de acompanhamento: Batata frita e arroz branco OU Batata frita e arroz chaufa.",
     "price": "R$ 30,00",
-    "image": "images/chicharron-frango.jpg",
+    "image": "images/chicharron-de-frango.jpg",
     "available": false
   },
   {
-    "id": "jantar-arroz-chaufa",
+    "id": "jantar-arroz-chaufa-misto",
     "category": "jantar",
     "subcategory": "j-principais",
     "title": "Arroz Chaufa Misto",
     "description": "Generosa porção servida com carnes mistas. Ideal para 2 pessoas.",
     "price": "R$ 35,00",
-    "image": "images/arroz-chaufa.jpg",
+    "image": "images/arroz-chaufa-misto.jpg",
     "available": true
   },
   {
@@ -222,27 +232,27 @@
     "available": true
   },
   {
-    "id": "jantar-parmegiana",
+    "id": "jantar-bife-a-parmegiana",
     "category": "jantar",
     "subcategory": "j-principais",
     "title": "Bife à Parmegiana",
     "description": "Bife empanado gratinado com queijo e molho, acompanhado de arroz e batata frita.",
     "price": "R$ 35,00",
-    "image": "images/parmegiana.jpg",
+    "image": "images/bife-a-parmegiana.jpg",
     "available": true
   },
   {
-    "id": "jantar-parmegiana2",
+    "id": "jantar-frango-a-parmegiana",
     "category": "jantar",
     "subcategory": "j-principais",
     "title": "Frango à Parmegiana",
     "description": "Frango empanado gratinado com queijo e molho, acompanhado de arroz e batata frita.",
     "price": "R$ 35,00",
-    "image": "images/parmegiana-frango.jpg",
+    "image": "images/frango-a-parmegiana.jpg",
     "available": true
   },
   {
-    "id": "jantar-ceviche-Coramar",
+    "id": "jantar-ceviche-coramar",
     "category": "jantar",
     "subcategory": "j-principais",
     "title": "Ceviche Coramar (Especial da Casa)",
@@ -262,7 +272,7 @@
     "available": true
   },
   {
-    "id": "jantar-combo-1",
+    "id": "jantar-frango-combo-1",
     "category": "jantar",
     "subcategory": "j-combos",
     "title": "Combo 1: Frango & Ceviche",
@@ -272,11 +282,11 @@
       { "label": "3 pessoas", "price": "R$ 130" },
       { "label": "5 pessoas", "price": "R$ 180" }
     ],
-    "image": "images/combo-frango.jpg",
+    "image": "images/frango-combo-1.jpg",
     "available": true
   },
   {
-    "id": "jantar-combo-2",
+    "id": "jantar-peixe-combo-2",
     "category": "jantar",
     "subcategory": "j-combos",
     "title": "Combo 2: Peixe & Ceviche",
@@ -286,7 +296,7 @@
       { "label": "3 pessoas", "price": "R$ 130" },
       { "label": "5 pessoas", "price": "R$ 180" }
     ],
-    "image": "images/combo-peixe.jpg",
+    "image": "images/peixe-combo-2.jpg",
     "available": true
   },
   {
@@ -345,24 +355,24 @@
     "available": true
   },
   {
-    "id": "torre-corona",
+    "id": "torre-de-corona",
     "category": "bebidas",
     "subcategory": "b-torres",
     "title": "Torre de Corona",
     "description": "2 Litros",
     "price": "R$ 75,00",
-    "image": "images/torre-corona.jpg",
+    "image": "images/torre-de-corona.jpg",
     "unit": "/torre",
     "available": true
   },
   {
-    "id": "torre-coronita",
+    "id": "torre-de-coronita",
     "category": "bebidas",
     "subcategory": "b-torres",
     "title": "Torre de Coronita",
     "description": "2 Litros",
     "price": "R$ 70,00",
-    "image": "images/torre-coronita.jpg",
+    "image": "images/torre-de-coronita.jpg",
     "unit": "/torre",
     "available": false
   },
