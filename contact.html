@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Contato — La Lechuza Coramar</title>
-  <meta name="description" content="Entre em contato com o La Lechuza Coramar no Bairro Taboca. Faça pedidos via WhatsApp, consulte horários de funcionamento e reserve eventos.">
+  <meta name="description" content="Entre em contato com o La Lechuza Coramar. Faça pedidos via WhatsApp, consulte horários de funcionamento e reserve eventos.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,71 +18,79 @@
   <div id="site-header"></div>
 
   <!-- CONTEÚDO EXCLUSIVO DESTA PÁGINA -->
-  <main class="page-main-content" style="padding-top: var(--header-height); min-height: 80vh;">
-    <section class="contact-section" aria-label="Informações de Contato e Atendimento">
-      <div class="container">
-        <div class="contact-layout">
-          <div class="contact-header">
-            <span class="gallery-subtitle">Atendimento &amp; Delivery</span>
-            <h1 class="gallery-title" style="margin-top: 0.5rem;">Fale Conosco</h1>
-            <p class="menu-copy" style="margin-top: 1rem; max-width: 52ch;">
-              Atendimento acolhedor, delivery ágil no Bairro Taboca e reservas personalizadas para o seu almoço, jantar ou evento. Peça diretamente pelo WhatsApp ou faça-nos uma visita.
-            </p>
-          </div>
-
-          <div class="contact-cards-grid">
-            <!-- Card 1: WhatsApp & Delivery -->
-            <div class="contact-card">
-              <div class="contact-icon" aria-hidden="true">📱</div>
-              <h3>WhatsApp &amp; Pedidos</h3>
-              <p>Faça seu pedido para entrega rápida a domicílio ou tire dúvidas sobre a disponibilidade dos pratos do dia.</p>
-              <a href="https://wa.me/559798991755073?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20pedido%20ou%20tirar%20uma%20d%C3%BAvida." 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="editorial-link" 
-                 style="margin-top: auto; padding-top: 1rem;">
-                (97) 98991-755073 &rarr;
-              </a>
-            </div>
-
-            <!-- Card 2: Horários de Funcionamento -->
-            <div class="contact-card">
-              <div class="contact-icon" aria-hidden="true">⏰</div>
-              <h3>Horários de Atendimento</h3>
-              <div style="font-size: 0.95rem; line-height: 1.7; color: var(--color-text-muted);">
-                <p><strong>Quarta a Domingo:</strong><br>
-                  &bull; Almoço: 11:00 às 14:00<br>
-                  &bull; Jantar: 18:00 às 23:00
-                </p>
-                <p style="margin-top: 0.5rem;"><strong>Terça-feira:</strong><br>
-                  &bull; Jantar: 18:00 às 23:00 (Apenas Noite)
-                </p>
-                <p style="margin-top: 0.5rem; color: var(--color-brand-gold, #c5a059); font-weight: 600;">
-                  Segunda-feira: Fechado
-                </p>
-              </div>
-            </div>
-
-            <!-- Card 3: Localização & Eventos -->
-            <div class="contact-card" style="grid-column: 1 / -1;">
-              <div class="contact-icon" aria-hidden="true">📍</div>
-              <h3>Localização &amp; Eventos Especiais</h3>
-              <address style="font-style: normal; line-height: 1.6; color: var(--color-text-muted);">
-                Bairro Taboca — Ao lado do posto de gasolina, em frente ao areial.
-              </address>
-              <p style="margin-top: 0.8rem; color: var(--color-text-muted); font-size: 0.95rem;">
-                Fazemos eventos exclusivos (aniversários, reuniões e celebrações). Entre em contato para personalizar o cardápio e a data da sua festa!
-              </p>
-              <div style="margin-top: 1rem;">
-                <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-brand-gold, #c5a059); letter-spacing: 0.05em; text-transform: uppercase;">
-                  Almoço Self-Service &bull; Jantar Sob Encomenda &bull; Delivery &bull; Eventos
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
+  <main class="page-main-content" style="padding-top: var(--header-height); min-height: 80vh; display: flex; flex-direction: column;">
+    
+    <div class="contact-dual-layout">
+      <!-- Lado Esquerdo: Mapa -->
+      <div class="map-container">
+        <!-- Mapa do Google configurado para Santo Antônio do Içá-AM -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15926.852654394015!2d-67.94420790856934!3d-3.1044431478143243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91e0a811c7590805%3A0xc3911c76949b29e6!2sSanto%20Ant%C3%B4nio%20do%20I%C3%A7%C3%A1%2C%20AM%2C%2069680-000!5e0!3m2!1spt-BR!2sbr!4v1731114200000!5m2!1spt-BR!2sbr" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
-    </section>
+
+      <!-- Lado Direito: Informações -->
+      <div class="info-container">
+        
+        <div class="info-header">
+           <h1 class="gallery-title">O La Lechuza</h1>
+           <p class="menu-copy" style="margin-top: 1rem; max-width: 45ch; text-align: center;">
+             Gastronomia excepcional e ambiente acolhedor.<br>Faça seu pedido agora para uma experiência inesquecível.
+           </p>
+        </div>
+
+        <div class="info-block">
+          <div class="contact-icon" aria-hidden="true">📍</div>
+          <h3>Encontre-nos no Bairro Taboca</h3>
+          <p>
+            Ao lado do posto de gasolina,<br>
+            Em frente ao areial<br>
+            Santo Antônio do Içá - AM
+          </p>
+        </div>
+
+        <div class="info-block">
+          <div class="contact-icon" aria-hidden="true">⏰</div>
+          <h3>Horários de Atendimento</h3>
+          <p>
+            <strong>Qua a Dom:</strong> 11h às 14h | 18h às 23h<br>
+            <strong>Terça:</strong> 18h às 23h<br>
+            <span style="color: var(--color-brand-gold);">Segunda-feira: Fechado</span>
+          </p>
+        </div>
+
+        <div class="info-block">
+          <div class="contact-icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+          <h3>Para toda a família</h3>
+          <p>Somos o local perfeito para criar memórias afetivas em família.</p>
+        </div>
+        
+        <div class="info-block">
+          <div class="contact-icon" aria-hidden="true">✨</div>
+          <h3>Cardápio Variado</h3>
+          <p>Almoço self-service, jantares sob encomenda e cevicharia fresca.</p>
+        </div>
+
+        <div class="contact-social-links" style="margin-top: 2rem;">
+          <!-- Emoji temporários, podem ser substituídos por SVGs depois -->
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+        </div>
+
+        <div class="contact-phones" style="margin-top: 1.5rem; font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-text-muted);">
+           <a href="https://wa.me/559798991755073" target="_blank" style="display: inline-flex; align-items: center; gap: 5px; color: inherit; text-decoration: none;">
+             <span>📱 WhatsApp Delivery: (97) 98991-755073</span>
+           </a>
+        </div>
+        
+      </div>
+    </div>
   </main>
 
   <!-- O Javascript injeta o rodapé modular -->

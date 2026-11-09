@@ -532,3 +532,124 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight:500; line-height: 1
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* ==========================================================================
+   NOVO LAYOUT DE CONTATO (ESTILO SPLIT / MAPA)
+   ========================================================================== */
+.contact-dual-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height));
+  background-color: var(--color-white);
+}
+
+/* No PC, divide a tela ao meio lado a lado e esconde a barra de rolagem geral da página */
+@media (min-width: 992px) {
+  .contact-dual-layout {
+    flex-direction: row;
+    height: calc(100vh - var(--header-height));
+    overflow: hidden;
+  }
+}
+
+/* Container do Mapa */
+.map-container {
+  width: 100%;
+  height: 50vh; /* No celular, o mapa ocupa meia tela */
+  position: relative;
+  background-color: #EAEAEA;
+}
+
+@media (min-width: 992px) {
+  .map-container {
+    width: 50%;
+    height: 100%;
+  }
+}
+
+/* Container das Informações de Texto */
+.info-container {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-page-bg);
+  /* Permite rolar o texto na lateral no PC sem mexer no mapa */
+  overflow-y: auto;
+}
+
+@media (min-width: 992px) {
+  .info-container {
+    width: 50%;
+    height: 100%;
+    padding: 5rem 10%;
+  }
+}
+
+.info-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-header .gallery-title {
+  color: var(--color-brand-gold);
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 2rem + 2vw, 3.5rem);
+}
+
+.info-block {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 400px;
+}
+
+.info-block .contact-icon {
+  font-size: 1.8rem;
+  color: var(--color-brand-gold);
+  margin-bottom: 0.8rem;
+}
+
+.info-block h3 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-block p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.contact-social-links {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.contact-social-links a {
+  color: var(--color-text-muted);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.contact-social-links a:hover {
+  transform: translateY(-3px);
+  filter: grayscale(0%);
+}
+
+/* Modo escuro para a página de contato dividida */
+:root.dark-mode .info-container {
+  background-color: var(--color-nav-bg);
+}
+
+:root.dark-mode .info-block h3 {
+  color: var(--color-text-main);
+}
